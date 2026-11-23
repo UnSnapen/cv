@@ -6,12 +6,15 @@
 <script>if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) location.replace('https:' + location.href.slice(5));</script>
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <title>Kenza SKALLI — Développeuse Full-Stack .NET / Angular</title>
-<meta name="description" content="Développeuse Full-Stack .NET / Angular, 4 ans d’expérience : API .NET Core 8, Angular 17, SQL Server, Azure. Ingénieure EILCO. Prenez rendez-vous.">
+<meta name="description" content="Kenza SKALLI, développeuse Full-Stack .NET / Angular (4 ans) : API .NET Core 8, Angular 17, SQL Server, Azure. Ingénieure EILCO, certifiée IA en 2026.">
 <meta name="author" content="Kenza SKALLI">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <link rel="canonical" href="https://cv-kenza.my-officeapps.com/">
 <meta name="theme-color" content="#f8f4ee" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#12100d" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="profile">
+<meta property="profile:first_name" content="Kenza">
+<meta property="profile:last_name" content="SKALLI">
 <meta property="og:site_name" content="Kenza SKALLI">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://cv-kenza.my-officeapps.com/">
@@ -36,12 +39,16 @@
 <link rel="preload" href="assets/fa/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="assets/fa/css/all.min.css"></noscript>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Kenza SKALLI","jobTitle":"Développeuse Full-Stack .NET / Angular",
- "url":"https://cv-kenza.my-officeapps.com/","image":"https://cv-kenza.my-officeapps.com/assets/og-image.jpg",
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebSite","@id":"https://cv-kenza.my-officeapps.com/#website","url":"https://cv-kenza.my-officeapps.com/","name":"Kenza SKALLI","alternateName":["CV de Kenza SKALLI"],"inLanguage":"fr-FR"},
+ {"@type":"ProfilePage","@id":"https://cv-kenza.my-officeapps.com/#profile","url":"https://cv-kenza.my-officeapps.com/","name":"Kenza SKALLI — Développeuse Full-Stack .NET / Angular","description":"Kenza SKALLI, développeuse Full-Stack .NET / Angular (4 ans) : API .NET Core 8, Angular 17, SQL Server, Azure. Ingénieure EILCO, certifiée IA en 2026.","inLanguage":"fr-FR","isPartOf":{"@id":"https://cv-kenza.my-officeapps.com/#website"},"dateCreated":"2026-11-23","dateModified":"2026-11-24","primaryImageOfPage":{"@type":"ImageObject","url":"https://cv-kenza.my-officeapps.com/assets/og-image.jpg","width":1200,"height":630},"mainEntity":{"@id":"https://cv-kenza.my-officeapps.com/#person"}},
+ {"@type":"Person","@id":"https://cv-kenza.my-officeapps.com/#person","alternateName":["Kenza Skalli"],"givenName":"Kenza","familyName":"SKALLI","description":"Développeuse Full-Stack .NET / Angular, 4 ans d’expérience (nucléaire, tourisme, BTP, e-commerce), ingénieure EILCO.","worksFor":{"@type":"Organization","name":"Groupe Vulcain"},"knowsLanguage":["Français","Anglais","Arabe"],"name":"Kenza SKALLI","jobTitle":"Développeuse Full-Stack .NET / Angular",
+ "url":"https://cv-kenza.my-officeapps.com/","image":["https://cv-kenza.my-officeapps.com/assets/kenza.webp","https://cv-kenza.my-officeapps.com/assets/og-image.jpg"],
  "alumniOf":{"@type":"CollegeOrUniversity","name":"EILCO — École d’ingénieurs du Littoral Côte d’Opale"},
  "knowsAbout":[".NET Core","C#","Angular","SQL Server","Azure","Azure DevOps","Power BI"],
  "email":"mailto:kenzaskalli4@gmail.com","telephone":"+33776005114",
  "hasCredential":[{"@type":"EducationalOccupationalCredential","name":"L’IA en action : prompter, automatiser, déployer — Profils techniques","credentialCategory":"certificate","recognizedBy":{"@type":"Organization","name":"Infogene"},"url":"https://infogene.edflex.com/fr/playlist-certificate/596f84fc-1811-4d68-a9db-90f031e8457b"},{"@type":"EducationalOccupationalCredential","name":"Refresh Cyber 2026","credentialCategory":"certificate","recognizedBy":{"@type":"Organization","name":"Infogene"},"url":"https://infogene.edflex.com/fr/playlist-certificate/a0bd8037-6a96-4409-b7af-d0efc70d9960"}]}
+]}
 </script>
 <style>
 /* Palette beige : --beige pour les aplats, --accent (beige foncé) pour les textes — contraste AA vérifié. */
@@ -70,7 +77,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .left{position:fixed;inset:0 auto 0 0;width:40vw;background:var(--panel);color:var(--panel-ink);display:flex;flex-direction:column;padding:clamp(1.4rem,3vw,2.6rem);z-index:5;overflow:hidden;transition:background .4s,color .4s}
 .left .acc{color:var(--panel-acc)}
 .left .top{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--ff-m);font-size:.7rem}
-.left .top b{font-family:var(--ff-d);font-size:1rem}
+.left .top b,.left .top .nm{font-family:var(--ff-d);font-size:1rem;font-weight:700;line-height:1.2}
 .left .top button{width:40px;height:40px;border-radius:50%;border:1px solid color-mix(in srgb,var(--panel-ink) 25%,transparent);display:grid;place-items:center;color:var(--panel-ink)}
 .left .top button:hover{border-color:var(--panel-acc);color:var(--panel-acc)}
 .left .mid{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.4rem}
@@ -227,7 +234,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 </head>
 <body>
 <aside class="left" id="left">
-  <div class="top"><b>Kenza SKALLI<span class="acc">.</span></b><button type="button" id="theme" aria-label="Thème clair / sombre"><i class="fa-solid fa-circle-half-stroke"></i></button></div>
+  <div class="top"><h1 class="nm">Kenza SKALLI<span class="acc">.</span></h1><button type="button" id="theme" aria-label="Thème clair / sombre"><i class="fa-solid fa-circle-half-stroke"></i></button></div>
   <div class="mid">
     <div class="pic" id="pic"><img src="assets/kenza.webp" alt="Portrait de Kenza SKALLI" width="408" height="612"></div>
     <div class="big"><span class="no"><span id="no">01</span></span><span class="tt"><span id="tt">Profil<span class="acc">.</span></span></span></div>
