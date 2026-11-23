@@ -40,7 +40,8 @@
  "url":"https://cv-kenza.my-officeapps.com/","image":"https://cv-kenza.my-officeapps.com/assets/og-image.jpg",
  "alumniOf":{"@type":"CollegeOrUniversity","name":"EILCO — École d’ingénieurs du Littoral Côte d’Opale"},
  "knowsAbout":[".NET Core","C#","Angular","SQL Server","Azure","Azure DevOps","Power BI"],
- "email":"mailto:kenzaskalli4@gmail.com","telephone":"+33776005114"}
+ "email":"mailto:kenzaskalli4@gmail.com","telephone":"+33776005114",
+ "hasCredential":[{"@type":"EducationalOccupationalCredential","name":"L’IA en action : prompter, automatiser, déployer — Profils techniques","credentialCategory":"certificate","recognizedBy":{"@type":"Organization","name":"Infogene"},"url":"https://infogene.edflex.com/fr/playlist-certificate/596f84fc-1811-4d68-a9db-90f031e8457b"},{"@type":"EducationalOccupationalCredential","name":"Refresh Cyber 2026","credentialCategory":"certificate","recognizedBy":{"@type":"Organization","name":"Infogene"},"url":"https://infogene.edflex.com/fr/playlist-certificate/a0bd8037-6a96-4409-b7af-d0efc70d9960"}]}
 </script>
 <style>
 /* Palette beige : --beige pour les aplats, --accent (beige foncé) pour les textes — contraste AA vérifié. */
@@ -134,6 +135,26 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .sk{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
 .sk>div{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;padding:.8rem 0;border-top:1px solid var(--line);align-items:baseline}
 .sk>div>span{font-family:var(--ff-m);font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+/* certifications */
+.ce-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1rem;margin-top:1.8rem}
+.ce-card{position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:1.4rem;display:flex;flex-direction:column;gap:.7rem;transition:transform .45s var(--ease),border-color .3s,box-shadow .45s}
+.ce-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 24px 60px -30px rgba(0,0,0,.35)}
+.ce-card.feat{background:linear-gradient(140deg,var(--accent-soft),var(--surface) 65%);border-color:color-mix(in srgb,var(--accent) 35%,var(--line))}
+.ce-card .shine{position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);pointer-events:none}
+.ce-card:hover .shine{animation:ceshine .9s}
+@keyframes ceshine{to{left:130%}}
+.ce-top{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.ce-ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;font-size:1.35rem;color:var(--panel-ink);background:var(--panel)}
+.ce-card.feat .ce-ic{background:linear-gradient(135deg,var(--pic-b),var(--panel));color:#fff}
+.ce-ok{font-family:var(--ff-m);font-size:.7rem;color:#1a7f4b;background:color-mix(in srgb,#19b36b 14%,transparent);border-radius:40px;padding:.3rem .7rem;display:inline-flex;gap:.4rem;align-items:center}
+:root[data-theme="dark"] .ce-ok{color:#5fd39a}
+.ce-cat{font-family:var(--ff-m);font-size:.7rem;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+.ce-card h3{font-family:var(--ff-d);font-weight:700;font-size:1.25rem;letter-spacing:-.02em;line-height:1.2}
+.ce-card.feat h3{font-size:1.45rem}
+.ce-meta{display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;margin-top:.2rem}
+.ce-meta dt{font-family:var(--ff-m);font-size:.66rem;color:var(--muted)}.ce-meta dd{font-size:.88rem;font-weight:500}
+.ce-link{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:.45rem;min-height:40px;font-family:var(--ff-m);font-size:.78rem;color:var(--ink);border-bottom:1px solid var(--accent);padding-bottom:2px}
+.ce-link:hover{color:var(--accent)}
 /* formation */
 .ed{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 .ed div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.2rem;font-size:.86rem;color:var(--muted)}
@@ -168,7 +189,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .foot a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}.foot a:hover{color:var(--accent)}
 @media (max-width:900px){
   .left{position:relative;width:auto}.left .mid{padding:2.2rem 0 1rem}.pic{width:96px;font-size:2.4rem}.right{margin-left:0}
-  .facts,.ed,.pr{grid-template-columns:1fr}.xr{grid-template-columns:1fr;gap:.5rem}.sk>div{grid-template-columns:1fr;gap:.3rem}
+  .facts,.ed,.pr,.ce-grid{grid-template-columns:1fr}.xr{grid-template-columns:1fr;gap:.5rem}.sk>div{grid-template-columns:1fr;gap:.3rem}
   .left .top button,.left .bot a,.left .bot button,.tog,.foot a{min-height:44px}.left .top button{min-width:44px}
   .tag,.eb,.facts span,.kp .l,.xr .s,.xr .w,.sk>div>span,.lg div span,.foot,.xr .pj em,.xr .now{font-size:.75rem}
   .prog a{height:28px}
@@ -177,7 +198,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- Impression : un CV papier propre ---------- */
 @media print{
   @page{size:A4;margin:12mm 13mm}
-  :root,:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--faint:#666;--line:#ccc;--accent:#7d5c38}
+  :root,:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--faint:#666;--line:#ccc;--accent:#7d5c38;--accent-soft:#f1e7d8;--panel:#1d1813;--panel-ink:#f3ede4;--panel-acc:#d8c3a5;--pic-a:#efe3cf;--pic-b:#c9ad85}
   body{font-size:9.5pt;line-height:1.4;background:#fff}
   .left{display:none!important}
   .print-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:2px solid #000;padding-bottom:.6rem;margin-bottom:.4rem}
@@ -195,6 +216,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .facts{grid-template-columns:repeat(3,1fr);margin-top:.6rem}.facts div{padding:.3rem 0}
   .xr{grid-template-columns:8rem 1fr;gap:.8rem;padding:.6rem 0;break-inside:avoid}.xr ul{margin-bottom:.3rem;gap:.1rem;font-size:8.5pt}
   .sk{grid-template-columns:1fr 1fr;gap:0 1rem}.sk>div{grid-template-columns:6.5rem 1fr;padding:.25rem 0}
+  .ce-grid{grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.5rem}.ce-card{padding:.6rem;gap:.3rem;border-radius:8px}.ce-card h3,.ce-card.feat h3{font-size:10.5pt}.ce-ic{width:28px;height:28px;font-size:.8rem;border-radius:7px}.ce-ok{font-size:7pt;padding:.1rem .4rem}.ce-meta dd{font-size:8.5pt}.ce-card .shine{display:none}
   .ed{grid-template-columns:1fr 1fr}.ed div{padding:.5rem}.ed .y{font-size:13pt}.lg{margin-top:.6rem}
   .pr{grid-template-columns:1fr}.pr .media,.tog,.note,.cta-k,.foot{display:none!important}
   .ct .big2{display:none}.ct{min-height:0!important}
@@ -242,7 +264,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <div><span>Secteurs</span><b>Nucléaire · Tourisme · BTP · E-commerce</b></div>
       <div><span>Méthode</span><b>Agile / Scrum · TMA</b></div>
       <div><span>Cloud</span><b>Azure · Azure DevOps</b></div>
-      <div><span>Langues</span><b>Français · Anglais · Arabe</b></div>
+      <div><span>Certifiée en 2026</span><b>IA générative · Cybersécurité</b></div>
     </div>
   </section>
 
@@ -351,8 +373,32 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </div>
   </section>
 
+  <section class="sec" id="certifications" data-t="Certifications" data-d="Formation continue certifiée en 2026 : IA générative appliquée au développement et cybersécurité." data-clip="inset(10% round 22px)">
+    <span class="eb">04 — Certifications</span>
+    <h2 class="rv">Formation continue, certifiée.</h2>
+    <p class="lede rv" style="--d:1">Deux certificats vérifiés délivrés en 2026 par Infogene sur Edflex, soit 6 h 15 de formation, dont un parcours dédié à l’IA générative pour les profils techniques.</p>
+    <div class="ce-grid">
+      <article class="ce-card feat rv">
+        <span class="shine" aria-hidden="true"></span>
+        <div class="ce-top"><span class="ce-ic"><i class="fa-solid fa-wand-magic-sparkles"></i></span><span class="ce-ok"><i class="fa-solid fa-circle-check"></i> Certificat vérifié</span></div>
+        <span class="ce-cat">IA générative · Profils techniques</span>
+        <h3>L’IA en action : prompter, automatiser, déployer</h3>
+        <dl class="ce-meta"><div><dt>Délivré par</dt><dd>Infogene · Edflex</dd></div><div><dt>Le</dt><dd><time datetime="2026-08-28">28 août 2026</time></dd></div><div><dt>Durée</dt><dd>4 h 45</dd></div></dl>
+        <a class="ce-link" href="https://infogene.edflex.com/fr/playlist-certificate/596f84fc-1811-4d68-a9db-90f031e8457b" target="_blank" rel="noopener">Vérifier le certificat <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+      <article class="ce-card rv" style="--d:1">
+        <span class="shine" aria-hidden="true"></span>
+        <div class="ce-top"><span class="ce-ic"><i class="fa-solid fa-shield-halved"></i></span><span class="ce-ok"><i class="fa-solid fa-circle-check"></i> Certificat vérifié</span></div>
+        <span class="ce-cat">Cybersécurité · Mise à jour 2026</span>
+        <h3>Refresh Cyber 2026</h3>
+        <dl class="ce-meta"><div><dt>Délivré par</dt><dd>Infogene · Edflex</dd></div><div><dt>Le</dt><dd><time datetime="2026-06-11">11 juin 2026</time></dd></div><div><dt>Durée</dt><dd>1 h 30</dd></div></dl>
+        <a class="ce-link" href="https://infogene.edflex.com/fr/playlist-certificate/a0bd8037-6a96-4409-b7af-d0efc70d9960" target="_blank" rel="noopener">Vérifier le certificat <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </article>
+    </div>
+  </section>
+
   <section class="sec" id="formation" data-t="Formation" data-d="Ingénieure en informatique (EILCO, Bac+5), classes préparatoires MPSI. Trilingue." data-clip="inset(6% round 34px 4px 34px 4px)">
-    <span class="eb">04 — Formation & langues</span>
+    <span class="eb">05 — Formation & langues</span>
     <h2 class="rv">Ingénieure, trilingue.</h2>
     <div class="ed">
       <div class="rv"><span class="y">2023</span><b>Diplôme d’ingénieur (Bac+5) — informatique</b>EILCO, École d’ingénieurs du Littoral Côte d’Opale · Calais · 2020 — 2023</div>
@@ -366,7 +412,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   </section>
 
   <section class="sec" id="projet" data-t="Projet" data-d="The Pirate’s Dice : un jeu mobile multijoueur publié sur l’App Store et Google Play." data-clip="inset(0 round 50% 50% 50% 6px)">
-    <span class="eb">05 — Projet personnel</span>
+    <span class="eb">06 — Projet personnel</span>
     <h2 class="rv">The Pirate’s Dice.</h2>
     <div class="pr">
       <div class="media rv"><img src="assets/pirates-dice.webp" alt="Aperçu du jeu The Pirate’s Dice" loading="lazy"></div>
@@ -380,7 +426,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   </section>
 
   <section class="sec ct" id="contact" data-t="Contact" data-d="Disponible pour échanger sur votre prochain projet .NET / Angular." data-clip="inset(0 round 50%)">
-    <span class="eb">06 — Contact</span>
+    <span class="eb">07 — Contact</span>
     <p class="big2 rv">Un projet .NET / Angular ?<br>Parlons-en<span class="acc">.</span></p>
     <!-- Coordonnées : à compléter (absentes du dossier de candidature). -->
     <div class="cl rv" id="cl"></div>
