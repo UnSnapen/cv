@@ -3,15 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) location.replace('https:' + location.href.slice(5));</script>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <title>Kenza SKALLI — Développeuse Full-Stack .NET / Angular</title>
-<meta name="description" content="Kenza SKALLI, développeuse Full-Stack .NET / Angular, 4 ans d’expérience : API .NET Core, Angular, SQL Server, Azure. Ingénieure EILCO.">
+<meta name="description" content="Développeuse Full-Stack .NET / Angular, 4 ans d’expérience : API .NET Core 8, Angular 17, SQL Server, Azure. Ingénieure EILCO. Prenez rendez-vous.">
 <meta name="author" content="Kenza SKALLI">
+<link rel="canonical" href="https://cv-kenza.my-officeapps.com/">
+<meta name="theme-color" content="#f8f4ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#12100d" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Kenza SKALLI">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://cv-kenza.my-officeapps.com/">
 <meta property="og:title" content="Kenza SKALLI — Développeuse Full-Stack .NET / Angular">
-<meta property="og:description" content="4 ans d’expérience : API .NET Core, Angular, SQL Server, Azure. Nucléaire, tourisme, BTP, e-commerce.">
-<meta property="og:type" content="website">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta property="og:description" content="4 ans d’expérience : API .NET Core 8, Angular 17, SQL Server, Azure. Nucléaire, tourisme, BTP, e-commerce.">
+<meta property="og:image" content="https://cv-kenza.my-officeapps.com/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kenza SKALLI, développeuse Full-Stack .NET / Angular">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kenza SKALLI — Développeuse Full-Stack .NET / Angular">
+<meta name="twitter:description" content="4 ans d’expérience : .NET 8, Angular 17, SQL Server, Azure.">
+<meta name="twitter:image" content="https://cv-kenza.my-officeapps.com/assets/og-image.jpg">
+<meta name="twitter:image:alt" content="Kenza SKALLI, développeuse Full-Stack">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" href="assets/icon-192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" href="assets/fonts/space-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="preload" href="assets/fa/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="assets/fa/css/all.min.css"></noscript>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Kenza SKALLI","jobTitle":"Développeuse Full-Stack .NET / Angular",
+ "url":"https://cv-kenza.my-officeapps.com/","image":"https://cv-kenza.my-officeapps.com/assets/og-image.jpg",
+ "alumniOf":{"@type":"CollegeOrUniversity","name":"EILCO — École d’ingénieurs du Littoral Côte d’Opale"},
+ "knowsAbout":[".NET Core","C#","Angular","SQL Server","Azure","Azure DevOps","Power BI"],
+ "email":"mailto:kenzaskalli4@gmail.com","telephone":"+33776005114"}
+</script>
 <style>
 /* Palette beige : --beige pour les aplats, --accent (beige foncé) pour les textes — contraste AA vérifié. */
 :root{
@@ -48,7 +78,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .big{font-family:var(--ff-d);font-weight:700;line-height:.86;letter-spacing:-.06em}
 .big .no{font-size:clamp(4rem,8.6vw,8rem);color:transparent;-webkit-text-stroke:1px color-mix(in srgb,var(--panel-ink) 35%,transparent);display:block;height:.86em;overflow:hidden}
 .big .no>span,.big .tt>span{display:block;transition:transform .55s var(--ease),opacity .4s}
-.print-head{display:none}
+.print-head,.print-foot{display:none}
 .big .tt{font-size:clamp(2rem,4vw,3.6rem);display:block;overflow:hidden;padding-bottom:.06em}
 .desc{max-width:36ch;opacity:.82;font-size:1rem;min-height:3.2em;transition:opacity .4s,transform .5s var(--ease)}
 .left.out .big span,.left.out .desc{transform:translateY(-105%);opacity:0}
@@ -66,7 +96,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 /* ---------- Contenu ---------- */
 .right{margin-left:40vw;padding:0 clamp(1.4rem,4vw,4rem)}
 .sec{padding:clamp(3rem,8vh,5rem) 0;border-bottom:1px solid var(--line);min-height:60vh}
-.sec:last-child{border:0;min-height:85vh;padding-bottom:6rem}
+.sec:last-of-type{border:0;min-height:85vh;padding-bottom:6rem}
 .eb{font-family:var(--ff-m);font-size:.7rem;color:var(--accent);margin-bottom:1rem;display:block}
 .sec h2{font-family:var(--ff-d);font-weight:700;font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.035em;line-height:1.05;margin-bottom:1.2rem;max-width:22ch}
 .lede{font-size:1.08rem;color:var(--muted);max-width:56ch}
@@ -87,6 +117,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .xr .o{font-family:var(--ff-d);font-weight:700;font-size:1.25rem;letter-spacing:-.02em;display:block;line-height:1.15}
 .xr .s{font-family:var(--ff-m);font-size:.64rem;color:var(--accent);display:block;margin-top:.3rem}
 .xr .w{font-family:var(--ff-m);font-size:.66rem;color:var(--muted);display:block;margin-top:.4rem}
+.xr .now{display:inline-block;margin-top:.45rem;font-family:var(--ff-m);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;color:var(--panel);background:var(--panel-acc);padding:.15rem .5rem;border-radius:20px}
 .xr h3{font-family:var(--ff-d);font-weight:500;font-size:1.02rem;margin-bottom:.35rem}
 .xr .pj{font-size:.9rem;color:var(--ink);margin-bottom:.6rem}
 .xr .pj em{font-style:normal;font-family:var(--ff-m);font-size:.66rem;color:var(--muted);margin-right:.3rem}
@@ -127,11 +158,20 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .ct .big2{font-family:var(--ff-d);font-weight:700;font-size:clamp(2.2rem,4.6vw,4rem);letter-spacing:-.05em;line-height:.95;margin-bottom:1.4rem}
 .cl{display:flex;flex-direction:column;gap:.7rem;font-family:var(--ff-m);font-size:.86rem}
 .cl a{display:inline-flex;align-items:center;gap:.6rem}.cl a:hover{color:var(--accent)}
+.cta-k{display:flex;gap:1rem 1.4rem;align-items:center;flex-wrap:wrap;margin:.4rem 0 1.4rem}
+.btn-k{display:inline-flex;align-items:center;gap:.55rem;min-height:48px;padding:.75rem 1.3rem;border-radius:40px;background:var(--ink);color:var(--bg);font-weight:600;font-size:.95rem;transition:.3s}
+.btn-k:hover{background:var(--accent);color:#fff}
+.lnk-k{font-family:var(--ff-m);font-size:.82rem;color:var(--ink);text-decoration:underline;text-underline-offset:3px;min-height:44px}
 .note{font-family:var(--ff-m);font-size:.74rem;color:var(--muted);border:1px dashed var(--line);border-radius:12px;padding:1rem;max-width:52ch}
 @media (max-width:1100px){.wins{grid-template-columns:repeat(2,1fr)}.sk{grid-template-columns:1fr}}
+.foot{display:flex;gap:.6rem 1.4rem;flex-wrap:wrap;align-items:center;font-family:var(--ff-m);font-size:.74rem;color:var(--muted);padding:1.4rem 0 2.4rem;border-top:1px solid var(--line)}
+.foot a{color:var(--muted);text-decoration:underline;text-underline-offset:3px}.foot a:hover{color:var(--accent)}
 @media (max-width:900px){
   .left{position:relative;width:auto}.left .mid{padding:2.2rem 0 1rem}.pic{width:96px;font-size:2.4rem}.right{margin-left:0}
   .facts,.ed,.pr{grid-template-columns:1fr}.xr{grid-template-columns:1fr;gap:.5rem}.sk>div{grid-template-columns:1fr;gap:.3rem}
+  .left .top button,.left .bot a,.left .bot button,.tog,.foot a{min-height:44px}.left .top button{min-width:44px}
+  .tag,.eb,.facts span,.kp .l,.xr .s,.xr .w,.sk>div>span,.lg div span,.foot,.xr .pj em,.xr .now{font-size:.75rem}
+  .prog a{height:28px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.rv{opacity:1;transform:none}}
 /* ---------- Impression : un CV papier propre ---------- */
@@ -140,7 +180,11 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   :root,:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--faint:#666;--line:#ccc;--accent:#7d5c38}
   body{font-size:9.5pt;line-height:1.4;background:#fff}
   .left{display:none!important}
-  .print-head{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;border-bottom:2px solid #000;padding-bottom:.6rem;margin-bottom:.4rem}
+  .print-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-bottom:2px solid #000;padding-bottom:.6rem;margin-bottom:.4rem}
+  .print-head .pp{width:22mm;height:22mm;object-fit:cover;object-position:50% 8%;border-radius:4mm;background:linear-gradient(160deg,#efe3cf,#c9ad85);flex-shrink:0}
+  .print-head>div{flex:1}
+  .print-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;border-top:2px solid #000;padding-top:.6rem;margin-top:.8rem;break-inside:avoid}
+  .print-foot b{display:block;font-family:var(--ff-d);font-size:11pt}.print-foot span{font-family:var(--ff-m);font-size:8pt;color:#333}.print-foot img{width:18mm;height:18mm}
   .print-head b{font-family:var(--ff-d);font-size:20pt;letter-spacing:-.03em;display:block;line-height:1.1}
   .print-head span{font-family:var(--ff-m);font-size:8pt;color:#333}
   .right{margin:0;padding:0}
@@ -152,7 +196,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .xr{grid-template-columns:8rem 1fr;gap:.8rem;padding:.6rem 0;break-inside:avoid}.xr ul{margin-bottom:.3rem;gap:.1rem;font-size:8.5pt}
   .sk{grid-template-columns:1fr 1fr;gap:0 1rem}.sk>div{grid-template-columns:6.5rem 1fr;padding:.25rem 0}
   .ed{grid-template-columns:1fr 1fr}.ed div{padding:.5rem}.ed .y{font-size:13pt}.lg{margin-top:.6rem}
-  .pr{grid-template-columns:1fr}.pr .media,.tog,.note{display:none!important}
+  .pr{grid-template-columns:1fr}.pr .media,.tog,.note,.cta-k,.foot{display:none!important}
   .ct .big2{display:none}.ct{min-height:0!important}
   .more{grid-template-rows:1fr!important}.rv{opacity:1!important;transform:none!important}.lg .bar i{transform:none}
   .tag{border-color:#999;color:#000;font-size:7pt;padding:.08rem .4rem}
@@ -169,17 +213,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <nav class="prog" id="prog" aria-label="Sections"></nav>
   </div>
   <div class="bot">
-    <a class="p" href="#contact"><i class="fa-regular fa-envelope"></i> Me contacter</a>
-    <button type="button" onclick="window.print()"><i class="fa-solid fa-arrow-down"></i> CV en PDF</button>
+    <button type="button" class="p" data-agent-book><i class="fa-regular fa-calendar-check"></i> Prendre rendez-vous</button>
+    <a href="assets/Kenza-SKALLI-CV.pdf" download><i class="fa-solid fa-arrow-down"></i> CV en PDF</a>
   </div>
 </aside>
 
 <main class="right">
-  <header class="print-head"><div><b>Kenza SKALLI</b><span>Développeuse Full-Stack .NET / Angular · 4 ans d’expérience · Ingénieure EILCO</span></div><span id="printContact"></span></header>
+  <header class="print-head"><img class="pp" src="assets/kenza.webp" alt=""><div><b>Kenza SKALLI</b><span>Développeuse Full-Stack .NET / Angular · 4 ans d’expérience · Ingénieure EILCO</span></div><span id="printContact"></span></header>
   <section class="sec" id="profil" data-t="Profil" data-d="Développeuse Full-Stack .NET / Angular — 4 ans à livrer des applications métier." data-clip="inset(0 round 18px)">
     <span class="eb">01 — Profil</span>
     <h2 class="rv">Des API .NET robustes, des interfaces Angular soignées.</h2>
-    <p class="lede rv" style="--d:1">Développeuse Full-Stack .NET / Angular avec 4 ans d’expérience. Je conçois des API REST en .NET Core, des interfaces Angular et des bases SQL Server performantes, du développement à la mise en production et à la TMA — dans le nucléaire, le tourisme, le BTP et l’e-commerce.</p>
+    <p class="lede rv" style="--d:1">Développeuse Full-Stack .NET / Angular avec 4 ans d’expérience. Je conçois des API REST en .NET Core, des interfaces Angular et des bases SQL Server performantes, du développement à la mise en production et à la TMA — dans le nucléaire, le tourisme, le BTP et l’e-commerce. Approche DevOps (CI/CD, déploiement, monitoring) et attention constante à la performance et à la qualité du code.</p>
     <div class="kp">
       <div class="rv" style="--d:2"><div class="n">4 ans</div><div class="l">d’expérience</div></div>
       <div class="rv" style="--d:3"><div class="n">5</div><div class="l">missions & entreprises</div></div>
@@ -207,7 +251,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <h2 class="rv">Cinq contextes, une même exigence.</h2>
 
     <article class="xr rv open">
-      <div><span class="o">Groupe Vulcain</span><span class="s">Client Westinghouse · nucléaire</span><span class="w">Juin 2026 — aujourd’hui</span></div>
+      <div><span class="o">Groupe Vulcain</span><span class="s">Client Westinghouse · nucléaire</span><span class="w">Juin 2026 — aujourd’hui</span><span class="now">En poste</span></div>
       <div>
         <h3>Développeuse Full-Stack .NET / Angular</h3>
         <p class="pj"><em>Projet</em>Hublot — suivi de l’avancement des contrôles de tubes de générateurs de vapeur, interconnecté à deux systèmes tiers (SICAD, TubeRAS), mené jusqu’à la mise en production avec les utilisateurs.</p>
@@ -225,7 +269,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </article>
 
     <article class="xr rv">
-      <div><span class="o">Utrav</span><span class="s">Tourisme · SaaS</span><span class="w">Nov. 2025 — mai 2026</span></div>
+      <div><span class="o">Utrav</span><span class="s">Tourisme · SaaS</span><span class="w">Nov. 2025 — mai 2026 · 7 mois</span></div>
       <div>
         <h3>Développeuse Full-Stack .NET / Angular</h3>
         <p class="pj"><em>Projet</em>Plateforme SaaS multi-tenant de gestion de voyages (web + mobile) : back-office Angular 17 et API .NET Core 8.</p>
@@ -242,7 +286,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </article>
 
     <article class="xr rv">
-      <div><span class="o">BIR Rovanier</span><span class="s">BTP</span><span class="w">Nov. 2023 — oct. 2025</span></div>
+      <div><span class="o">BIR Rovanier</span><span class="s">BTP</span><span class="w">Nov. 2023 — oct. 2025 · 2 ans</span></div>
       <div>
         <h3>Développeuse Full-Stack .NET / Angular</h3>
         <p class="pj"><em>Projet</em>Développement et TMA d’une application métier de gestion de chantiers (Angular 14 / .NET Core 6).</p>
@@ -260,7 +304,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </article>
 
     <article class="xr rv">
-      <div><span class="o">Sanant Technologie</span><span class="s">E-commerce</span><span class="w">Sept. 2022 — août 2023</span></div>
+      <div><span class="o">Sanant Technologie</span><span class="s">E-commerce</span><span class="w">Sept. 2022 — août 2023 · 1 an</span></div>
       <div>
         <h3>Développeuse Full-Stack .NET / Angular</h3>
         <button class="tog" type="button"><i class="fa-solid fa-chevron-down"></i> Réalisations</button>
@@ -274,7 +318,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     </article>
 
     <article class="xr rv">
-      <div><span class="o">LMK Meta</span><span class="s">Mission freelance</span><span class="w">Juin — sept. 2021</span></div>
+      <div><span class="o">LMK Meta</span><span class="s">Mission freelance</span><span class="w">Juin — sept. 2021 · 4 mois</span></div>
       <div>
         <h3>Développeuse web</h3>
         <p class="pj"><em>Projet</em>Plateforme de suivi des cryptomonnaies en temps réel.</p>
@@ -340,15 +384,18 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <p class="big2 rv">Un projet .NET / Angular ?<br>Parlons-en<span class="acc">.</span></p>
     <!-- Coordonnées : à compléter (absentes du dossier de candidature). -->
     <div class="cl rv" id="cl"></div>
-    <p class="note rv" id="note">Coordonnées communiquées sur demande.</p>
+    <div class="cta-k rv"><button type="button" class="btn-k" data-agent-book>Réserver un échange de 30 min <i class="fa-regular fa-calendar-check"></i></button><button type="button" class="lnk-k" data-agent-open>Poser une question à l’assistant</button></div>
+    <p class="note rv" id="note">Choisissez un créneau ou laissez un message : Kenza vous répond par e-mail.</p>
   </section>
+  <div class="print-foot"><p><b>CV interactif, démo et prise de rendez-vous</b><span>cv-kenza.my-officeapps.com</span></p><img src="assets/qr-cv.svg" alt=""></div>
+  <footer class="foot" aria-label="Informations légales"><span>© 2026 Kenza SKALLI</span><a href="mentions-legales.html">Mentions légales &amp; conditions</a><a href="confidentialite.html">Confidentialité</a></footer>
 </main>
 
 <script>
 (function () {
   'use strict';
   /* Coordonnées à renseigner avant publication (laissées vides : le dossier n’en contient pas). */
-  var CONTACT = { email: '', phone: '', linkedin: '', github: '' };
+  var CONTACT = { email: 'kenzaskalli4@gmail.com', phone: '+33 7 76 00 51 14', linkedin: '', github: '' };
   var cl = document.getElementById('cl'), links = [];
   if (CONTACT.email) links.push('<a href="mailto:' + CONTACT.email + '"><i class="fa-regular fa-envelope"></i> ' + CONTACT.email + '</a>');
   if (CONTACT.phone) links.push('<a href="tel:' + CONTACT.phone.replace(/\s/g, '') + '"><i class="fa-solid fa-phone"></i> ' + CONTACT.phone + '</a>');
@@ -399,5 +446,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   cur = 0; bars[0].classList.add('on');
 })();
 </script>
+<!-- Agent IA du CV : réponses, orientation, prise de rendez-vous (Worker Cloudflare) -->
+<script src="assets/js/cv-agent.js" data-site="kenza" data-first="Kenza" data-api="https://agent.my-officeapps.com" data-suggestions="Est-elle disponible ?|Son expérience .NET / Angular ?|Ses résultats chiffrés ?" defer></script>
 </body>
 </html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cv-kenza.my-officeapps.com/sitemap.xml
