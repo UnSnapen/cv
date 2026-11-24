@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) location.replace('https:' + location.href.slice(5));</script>
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<!-- Thème appliqué avant le premier affichage ; intro « Rideaux » à chaque chargement (impossible à passer ;
+     sauf robots d'indexation et outils de mesure ; ?intro la force dans tous les cas). -->
+<script>(function(){var r=document.documentElement;try{var t=localStorage.getItem('ks-theme');if(!t)t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';r.setAttribute('data-theme',t)}catch(e){}
+try{var q=/[?&]intro\b/.test(location.search),bot=/bot|crawl|spider|lighthouse|headless|preview/i.test(navigator.userAgent);if(q||!bot)r.classList.add('intro')}catch(e){}})();</script>
+<script src="assets/js/intro.js" defer></script>
 <title>Kenza SKALLI — Développeuse Full-Stack .NET / Angular</title>
 <meta name="description" content="Kenza SKALLI, développeuse Full-Stack .NET / Angular (4 ans) : API .NET Core 8, Angular 17, SQL Server, Azure. Ingénieure EILCO, certifiée IA en 2026.">
 <meta name="author" content="Kenza SKALLI">
@@ -51,6 +56,14 @@
 ]}
 </script>
 <style>
+/* ============ INTRO « RIDEAUX » (assets/js/intro.js) ============ */
+html.intro::before{content:"";position:fixed;inset:0;z-index:2147483000;background:var(--bg);animation:intro-secours .3s 5s forwards}
+html.intro.intro-on::before{display:none}
+@keyframes intro-secours{to{opacity:0;visibility:hidden}}
+#intro-canvas{position:fixed;inset:0;width:100%;height:100%;z-index:2147483001;pointer-events:none}
+@media print{#intro-canvas{display:none}html.intro::before{display:none}}
+.left .top .tb{display:flex;gap:.5rem}
+#gestBtn[aria-pressed="true"]{border-color:var(--panel-acc);color:var(--panel-acc)}
 /* Palette beige : --beige pour les aplats, --accent (beige foncé) pour les textes — contraste AA vérifié. */
 :root{
   --bg:#f8f4ee;--surface:#fffdf9;--ink:#1d1813;--muted:#5f5850;--faint:#736a5f;--line:#e3dbcf;
@@ -257,7 +270,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 </head>
 <body>
 <aside class="left" id="left">
-  <div class="top"><h1 class="nm">Kenza SKALLI<span class="acc">.</span></h1><button type="button" id="theme" aria-label="Thème clair / sombre"><i class="fa-solid fa-circle-half-stroke"></i></button></div>
+  <div class="top"><h1 class="nm">Kenza SKALLI<span class="acc">.</span></h1><span class="tb"><button type="button" id="gestBtn" aria-pressed="false" aria-label="Naviguer avec les mains (caméra)" title="Naviguer avec les mains (caméra)"><i class="fa-solid fa-hand"></i></button><button type="button" id="theme" aria-label="Thème clair / sombre"><i class="fa-solid fa-circle-half-stroke"></i></button></span></div>
   <div class="mid">
     <div class="pic" id="pic"><img src="assets/kenza.webp" alt="Portrait de Kenza SKALLI" width="408" height="612"></div>
     <div class="big"><span class="no"><span id="no">01</span></span><span class="tt"><span id="tt">Profil<span class="acc">.</span></span></span></div>
@@ -531,9 +544,23 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   var so = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) set(secs.indexOf(e.target)); }); }, { rootMargin: '-40% 0px -55% 0px' });
   secs.forEach(function (s) { so.observe(s); });
   cur = 0; bars[0].classList.add('on');
+
+  /* Navigation pour les gestes à la caméra (assets/js/cv-gestes.js) : une « page » = une section */
+  window.cvNav = {
+    count: secs.length,
+    current: function () { return Math.max(0, cur); },
+    open: function (i) { i = Math.max(0, Math.min(secs.length - 1, i)); secs[i].scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+    next: function () { this.open(cur + 1); },
+    prev: function () { this.open(cur - 1); },
+    theme: function () { document.getElementById('theme').click(); },
+    name: function (i) { return secs[i] ? secs[i].getAttribute('data-t') : ''; }
+  };
 })();
 </script>
 <!-- Agent IA du CV : réponses, orientation, prise de rendez-vous (Worker Cloudflare) -->
 <script src="assets/js/cv-agent.js" data-site="kenza" data-first="Kenza" data-api="https://agent.my-officeapps.com" data-suggestions="Est-elle disponible ?|Son expérience .NET / Angular ?|Ses résultats chiffrés ?" defer></script>
+<!-- Navigation aux gestes (bouton ✋) : MediaPipe n’est chargé qu’à l’activation, la vidéo reste sur l’appareil -->
+<script src="assets/js/gestes-engine.js" defer></script>
+<script src="assets/js/cv-gestes.js" defer></script>
 </body>
 </html>
