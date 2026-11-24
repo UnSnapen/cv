@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /scripts/
 
 Sitemap: https://cv-kenza.my-officeapps.com/sitemap.xml

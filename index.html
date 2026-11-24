@@ -204,8 +204,29 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   .prog a{height:28px}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}.rv{opacity:1;transform:none}}
+/* ---------- À emporter : CV, présentation, carte, dossier ---------- */
+.docs{margin-top:2.4rem}
+.docs-h{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem 1.4rem;border-top:1px solid var(--line);padding-top:1.2rem;margin-bottom:1rem}
+.docs-h h3{font-family:var(--ff-d);font-size:1.3rem;letter-spacing:-.02em}
+.docs-h div{display:flex;flex-wrap:wrap;gap:.2rem 1.2rem}
+.docs-h a{font-family:var(--ff-m);font-size:.76rem;display:inline-flex;gap:.45rem;align-items:center;min-height:44px}
+.docs-h a:hover{color:var(--accent)}.docs-h small{color:var(--faint);font-size:.66rem}
+.docs-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:.8rem}
+.doc{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);transition:border-color .3s,transform .4s var(--ease)}
+.doc:hover{border-color:var(--accent);transform:translateY(-3px)}
+.doc .th{background:var(--accent-soft);height:200px;display:flex;align-items:center;justify-content:center;padding:.9rem;overflow:hidden}
+.doc .th img{max-height:100%;max-width:100%;width:auto;height:auto;min-height:0;border-radius:3px;box-shadow:0 8px 22px rgba(29,24,19,.16)}
+.doc .bd{padding:.85rem .95rem .7rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
+.doc .no{font-family:var(--ff-m);font-size:.66rem;color:var(--faint)}
+.doc b{font-family:var(--ff-d);font-size:1rem;letter-spacing:-.01em}
+.doc .bd>span:not(.no){font-size:.8rem;color:var(--muted);line-height:1.45}
+@media (max-width:520px){.docs-g{grid-template-columns:1fr 1fr;gap:.6rem}.doc .bd{padding:.7rem .7rem .5rem}.doc .bd>span:not(.no){font-size:.74rem}.doc .ac{padding:.1rem .7rem}.doc .th{padding:.6rem;height:165px}}
+.doc em{font-style:normal;font-family:var(--ff-m);font-size:.68rem;color:var(--faint);margin-top:auto;padding-top:.3rem}
+.doc .ac{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:.2rem .95rem;font-family:var(--ff-m);font-size:.74rem}
+.doc .ac a{display:inline-flex;gap:.4rem;align-items:center;min-height:44px}.doc .ac a:hover{color:var(--accent)}
 /* ---------- Impression : un CV papier propre ---------- */
 @media print{
+  .docs{display:none}
   @page{size:A4;margin:12mm 13mm}
   :root,:root[data-theme="dark"]{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--faint:#666;--line:#ccc;--accent:#7d5c38;--accent-soft:#f1e7d8;--panel:#1d1813;--panel-ink:#f3ede4;--panel-acc:#d8c3a5;--pic-a:#efe3cf;--pic-b:#c9ad85}
   body{font-size:9.5pt;line-height:1.4;background:#fff}
@@ -441,6 +462,17 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     <div class="cl rv" id="cl"></div>
     <div class="cta-k rv"><button type="button" class="btn-k" data-agent-book>Réserver un échange de 30 min <i class="fa-regular fa-calendar-check"></i></button><button type="button" class="lnk-k" data-agent-open>Poser une question à l’assistant</button></div>
     <p class="note rv" id="note">Choisissez un créneau ou laissez un message : Kenza vous répond par e-mail.</p>
+    <!-- DOCUMENTS:START -->
+    <div class="docs rv" id="documents"><div class="docs-h"><h3>À emporter<span class="acc">.</span></h3><div><a href="assets/documents/Kenza-SKALLI-Documents.zip" download><i class="fa-solid fa-arrow-down"></i> Tout télécharger <small>ZIP</small></a><a href="assets/documents/Kenza-SKALLI.vcf" download><i class="fa-regular fa-address-card"></i> Ajouter à mes contacts <small>VCF</small></a></div></div><div class="docs-g"><article class="doc"><a class="th" href="assets/Kenza-SKALLI-CV.pdf" target="_blank" rel="noopener" aria-label="Ouvrir le cv (PDF)"><img src="assets/documents/cv-1.webp" alt="" loading="lazy" width="300" height="424"></a>
+      <div class="bd"><span class="no">01</span><b>Le CV</b><span>Profil, cinq expériences, compétences, certifications et formation.</span><em>A4 · 2 pages · 770 Ko</em></div>
+      <div class="ac"><a href="assets/Kenza-SKALLI-CV.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-eye"></i> Aperçu</a><a href="assets/Kenza-SKALLI-CV.pdf" download><i class="fa-solid fa-arrow-down"></i> PDF</a></div></article><article class="doc"><a class="th" href="assets/documents/Kenza-SKALLI-Presentation.pdf" target="_blank" rel="noopener" aria-label="Ouvrir la présentation (PDF)"><img src="assets/documents/presentation-1.webp" alt="" loading="lazy" width="300" height="424"></a>
+      <div class="bd"><span class="no">02</span><b>La présentation</b><span>Une page : profil, résultats clés, missions et stack.</span><em>A4 · 1 page · 534 Ko</em></div>
+      <div class="ac"><a href="assets/documents/Kenza-SKALLI-Presentation.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-eye"></i> Aperçu</a><a href="assets/documents/Kenza-SKALLI-Presentation.pdf" download><i class="fa-solid fa-arrow-down"></i> PDF</a></div></article><article class="doc"><a class="th" href="assets/documents/Kenza-SKALLI-Carte-de-visite.pdf" target="_blank" rel="noopener" aria-label="Ouvrir la carte de visite (PDF)"><img src="assets/documents/carte-1.webp" alt="" loading="lazy" width="300" height="212"></a>
+      <div class="bd"><span class="no">03</span><b>La carte de visite</b><span>Recto verso, avec un QR code vers le CV en ligne.</span><em>85 × 55 mm · recto / verso · 243 Ko</em></div>
+      <div class="ac"><a href="assets/documents/Kenza-SKALLI-Carte-de-visite.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-eye"></i> Aperçu</a><a href="assets/documents/Kenza-SKALLI-Carte-de-visite.pdf" download><i class="fa-solid fa-arrow-down"></i> PDF</a></div></article><article class="doc"><a class="th" href="assets/documents/Kenza-SKALLI-Dossier-de-competences.pdf" target="_blank" rel="noopener" aria-label="Ouvrir le dossier de compétences (PDF)"><img src="assets/documents/dossier-1.webp" alt="" loading="lazy" width="300" height="424"></a>
+      <div class="bd"><span class="no">04</span><b>Le dossier de compétences</b><span>Stack détaillée, missions complètes, certifications et formation.</span><em>A4 · 4 pages · 979 Ko</em></div>
+      <div class="ac"><a href="assets/documents/Kenza-SKALLI-Dossier-de-competences.pdf" target="_blank" rel="noopener"><i class="fa-regular fa-eye"></i> Aperçu</a><a href="assets/documents/Kenza-SKALLI-Dossier-de-competences.pdf" download><i class="fa-solid fa-arrow-down"></i> PDF</a></div></article></div></div>
+    <!-- DOCUMENTS:END -->
   </section>
   <div class="print-foot"><p><b>CV interactif, démo et prise de rendez-vous</b><span>cv-kenza.my-officeapps.com</span></p><img src="assets/qr-cv.svg" alt=""></div>
   <footer class="foot" aria-label="Informations légales"><span>© 2026 Kenza SKALLI</span><a href="mentions-legales.html">Mentions légales &amp; conditions</a><a href="confidentialite.html">Confidentialité</a></footer>
