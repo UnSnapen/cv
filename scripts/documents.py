@@ -125,8 +125,28 @@ def still(path: pathlib.Path, width: int = 900) -> str:
     return 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()
 
 
-def photo() -> str:
-    return data_uri(ROOT / 'assets' / 'kenza.webp', 'image/webp')
+def photo(width: int = 600) -> str:
+    """La photo détourée, posée sur le dégradé beige des cadres (160°, --pic-a → --pic-b) et livrée en JPEG :
+    gardée transparente, Chrome l'intégrerait sans compression et chaque PDF prendrait environ 850 Ko de plus."""
+    import math
+
+    import numpy as np
+    from PIL import Image
+    with Image.open(ROOT / 'assets' / 'kenza.webp') as im:
+        im = im.convert('RGBA')
+        if im.width > width:
+            im = im.resize((width, round(im.height * width / im.width)), Image.LANCZOS)
+    w, h = im.size
+    dx, dy = math.sin(math.radians(160)), -math.cos(math.radians(160))
+    y, x = np.mgrid[0:h, 0:w].astype(np.float64)
+    t = np.clip(((x - w / 2) * dx + (y - h / 2) * dy) / (abs(w * dx) + abs(h * dy)) + .5, 0, 1)[..., None]
+    fond = (1 - t) * np.array([0xef, 0xe3, 0xcf]) + t * np.array([0xc9, 0xad, 0x85])
+    a = np.asarray(im, dtype=np.float64)
+    al = a[..., 3:] / 255
+    rgb = a[..., :3] * al + fond * (1 - al)
+    buf = io.BytesIO()
+    Image.fromarray(np.clip(rgb + .5, 0, 255).astype(np.uint8)).save(buf, format='JPEG', quality=86)
+    return 'data:image/jpeg;base64,' + base64.b64encode(buf.getvalue()).decode()
 
 
 def qr() -> str:
